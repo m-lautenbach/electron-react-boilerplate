@@ -7,6 +7,7 @@ import 'regenerator-runtime/runtime';
 
 function* fetchAccessToken(action) {
     try {
+        var client_id, client_secret, username, password;
         ({client_id, client_secret, username, password} = action.payload);
         const token = yield call(
             figoApi.aquireAccessToken,
