@@ -2,7 +2,7 @@ import credentials from '../.credentials'
 
 export default function() {
     return {
-        type: 'ACCESS_TOKEN_FETCH_REQUESTED',
+        type: 'START_SESSION_REQUESTED',
         payload: credentials
     }
 };

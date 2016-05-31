@@ -12,12 +12,12 @@ function* fetchAccessToken(action) {
         const token = yield figoApi.aquireAccessToken(client_id, client_secret, username, password);
         yield put(startSession(token.access_token));
     } catch (ex) {
-        yield put({type: 'ACCESS_TOKEN_FETCH_FAILED', message: ex.message});
+        yield put({type: 'START_SESSION_FAILED', message: ex.message});
     }
 };
 
 function* figoSaga() {
-    yield* takeLatest("ACCESS_TOKEN_FETCH_REQUESTED", fetchAccessToken);
+    yield* takeLatest("START_SESSION_REQUESTED", fetchAccessToken);
 };
 
 export default {
