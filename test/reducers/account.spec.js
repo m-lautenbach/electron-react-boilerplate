@@ -1,12 +1,13 @@
 import { expect } from 'chai';
 import accountReducer from '../../app/reducers/account';
 import {
-  setAccounts
+  setAccounts,
+  setTransactions
 } from '../../app/actions/account';
 
-describe('reducers: user', () => {
+describe('reducers: account', () => {
 
-  it('should replace all accounts by given', () => {
+  it('should replace all accounts', () => {
     var INITIAL_STATE = {
       account1: {
         account_id: 'account1',
@@ -37,6 +38,33 @@ describe('reducers: user', () => {
       account3: {
         account_id: 'account3',
         anyProperty3: 'any-data3'
+      }
+    });
+  });
+
+  it('should replace all transactions of selected account', () => {
+    var INITIAL_STATE = {
+      account1: {
+        account_id: 'account1',
+        transactions: [
+          {transaction_id: 'transaction1', anyProperty: 'any data1'},
+          {transaction_id: 'transaction2', anyProperty: 'any data2'}
+        ]
+      }
+    }
+    var action = setTransactions('account1', [
+      {transaction_id: 'transaction2', anyProperty: 'any data2b'},
+      {transaction_id: 'transaction3', anyProperty: 'any data3'}
+    ]);
+
+    var state = accountReducer(INITIAL_STATE, action);
+    expect(state).to.deep.equal({
+      account1: {
+        account_id: 'account1',
+        transactions: [
+          {transaction_id: 'transaction2', anyProperty: 'any data2b'},
+          {transaction_id: 'transaction3', anyProperty: 'any data3'}
+        ]
       }
     });
   });

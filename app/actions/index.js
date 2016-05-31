@@ -1,16 +1,17 @@
 import {
-  setAccounts
+  setAccounts,
+  setTransactions
 } from './account';
 import {
-  startSession
-  endSession
+  startSession,
+  endSession,
   setUserData
 } from './user';
 
-
 export {
-  setAccounts
-  startSession
-  endSession
+  setAccounts,
+  setTransactions,
+  startSession,
+  endSession,
   setUserData
 };

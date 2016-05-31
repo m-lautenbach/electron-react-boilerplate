@@ -19,4 +19,20 @@ describe('actions: account', () => {
     });
   });
 
+  it('set transactions', () => {
+    expect(actions.setTransactions('account1', [
+      {transaction_id: 'transaction1', any_property: 'any-data'},
+      {transaction_id: 'transaction2', any_property: 'any-data'}
+    ])).to.deep.equal({
+      type: actions.SET_TRANSACTIONS,
+      payload: {
+        accountId: 'account1',
+        transactions: [
+          {transaction_id: 'transaction1', any_property: 'any-data'},
+          {transaction_id: 'transaction2', any_property: 'any-data'}
+        ]
+      }
+    });
+  });
+
 });
