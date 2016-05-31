@@ -1,9 +1,9 @@
+import 'regenerator-runtime/runtime';
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
 import figoApi from './api/figo';
 
-import 'regenerator-runtime/runtime';
 
 function* fetchAccessToken(action) {
     try {
