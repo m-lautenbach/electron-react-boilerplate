@@ -5,7 +5,7 @@ import {
   endSession
 } from '../../app/actions/user';
 
-describe.('reducers: user', () => {
+describe('reducers: user', () => {
 
   it('should start session by setting access token', () => {
     var INITIAL_STATE = {}
