@@ -1,4 +1,4 @@
-.transaction {
+.container {
   padding: 1em;
   background: #fff;
   color: #666;
@@ -8,14 +8,37 @@
   font: 12px/1.5 Helvetica, Arial, sans-serif;
 }
 
-.transaction dl {
-  margin: 0;
+.container .main {
+  position: relative;
   overflow: auto;
+  height: 5em;
 }
 
-.transaction dt { clear: left; float: left; }
-.transaction dd { float: left; }
+.container .name { }
+.container .purpose { }
 
-.amount {
+.container .amount {
   font-size: 2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #72ab43;
+}
+
+.withdrawal .amount { color: #d74d4d; }
+
+.metaInfo {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  color: #999;
+  padding: 0;
+}
+
+.metaInfo h6 {
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  margin: 0;
 }
