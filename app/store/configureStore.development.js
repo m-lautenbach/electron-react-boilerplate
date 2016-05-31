@@ -31,20 +31,9 @@ const enhancer = compose(
 );
 
 export default function configureStore(initialState) {
-  var initialStateWithDemoCredentials = merge(initialState, {
-    client: {
-      identifier: 'CaESKmC8MAhNpDe5rvmWnSkRE_7pkkVIIgMwclgzGcQY',
-      secret: 'STdzfv0GXtEj_bwYn7AgCVszN1kKq5BdgEIKOM_fzybQ'
-    },
-    user: {
-      username: 'demo@figo.me',
-      password: 'demo1234',
-      access_token: 'ASHWLIkouP2O6_bgA2wWReRhletgWKHYjLqDaqb0LFfamim9RjexTo22ujRIP_cjLiRiSyQXyt2kM1eXU2XLFZQ0Hro15HikJQT_eNeT_9XQ'
-    }
-  });
   const store = createStore(
     rootReducer,
-    initialStateWithDemoCredentials,
+    initialState,
     enhancer
   );
 
