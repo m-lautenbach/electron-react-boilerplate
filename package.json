@@ -99,6 +99,7 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
+    "bluebird": "^3.4.0",
     "css-modules-require-hook": "^4.0.0",
     "electron-debug": "^0.6.0",
     "figo": "^1.4.0",
@@ -113,6 +114,7 @@
     "redux": "^3.4.0",
     "redux-saga": "^0.10.4",
     "redux-thunk": "^2.0.1",
+    "regenerator-runtime": "^0.9.5",
     "source-map-support": "^0.4.0"
   },
   "devEngines": {
