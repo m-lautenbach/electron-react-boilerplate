@@ -4,9 +4,14 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { hashHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
+import merge from 'lodash/fp/merge';
+import createSagaMiddleware from 'redux-saga';
+
 import rootReducer from '../reducers';
 import DevTools from '../containers/DevTools';
-import merge from 'lodash/fp/merge'
+import {figoSaga} from '../sagas';
+
+const sagaMiddleware = createSagaMiddleware()
 
 const logger = createLogger({
   level: 'info',
@@ -16,7 +21,7 @@ const logger = createLogger({
 const router = routerMiddleware(hashHistory);
 
 const enhancer = compose(
-  applyMiddleware(thunk, router, logger),
+  applyMiddleware(thunk, router, logger, sagaMiddleware),
   DevTools.instrument(),
   persistState(
     window.location.href.match(
@@ -37,7 +42,13 @@ export default function configureStore(initialState) {
       access_token: 'ASHWLIkouP2O6_bgA2wWReRhletgWKHYjLqDaqb0LFfamim9RjexTo22ujRIP_cjLiRiSyQXyt2kM1eXU2XLFZQ0Hro15HikJQT_eNeT_9XQ'
     }
   });
-  const store = createStore(rootReducer, initialStateWithDemoCredentials, enhancer);
+  const store = createStore(
+    rootReducer,
+    initialStateWithDemoCredentials,
+    enhancer
+  );
+
+  sagaMiddleware.run(figoSaga);
 
   if (module.hot) {
     module.hot.accept('../reducers', () =>
