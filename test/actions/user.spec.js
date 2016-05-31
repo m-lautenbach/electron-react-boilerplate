@@ -18,4 +18,16 @@ describe('actions: user', () => {
     });
   });
 
+  it('set user data', () => {
+    expect(actions.setUserData({x:1, y:'#'})).to.deep.equal({
+      type: actions.SET_USER_DATA,
+      payload: {
+        userData: {
+          x: 1,
+          y: '#'
+        }
+      }
+    });
+  });
+
 });
