@@ -8,6 +8,9 @@ import {
   setAccounts,
   setTransactions
 } from './account';
+import {
+  selectAccount
+} from './select';
 
 export function login() {
   return (dispatch, getState) => {
@@ -30,13 +33,24 @@ export function login() {
     }));
 
     dispatch(setAccounts([
-      { account_id: 'fake-account' }
+      {
+        account_id: 'fake-account1',
+        account_number: '1234567890',
+        iban: 'DE99111111112222222222'
+      },
+      {
+        account_id: 'fake-account2',
+        account_number: '9876543210',
+        iban: 'DE00888888884444444444'
+      }
     ]));
 
-    dispatch(setTransactions('fake-account', [
+    dispatch(selectAccount('fake-account1'));
+
+    dispatch(setTransactions('fake-account1', [
       {
         transaction_id: 'fake-transaction-1',
-        account_id: 'fake-account',
+        account_id: 'fake-account1',
         accountNumber: '4711951501',
         amount: -300,
         bankCode: '90090042',
@@ -45,8 +59,18 @@ export function login() {
         currency: 'USD'
       },
       {
+        transaction_id: 'fake-transaction-1',
+        account_id: 'fake-account1',
+        accountNumber: '4711951501',
+        amount: 723.17,
+        bankCode: '99999999',
+        bankName: 'BLACK HOLE INC.',
+        name: 'annual offering',
+        currency: 'USD'
+      },
+      {
         transaction_id: 'fake-transaction-2',
-        account_id: 'fake-account',
+        account_id: 'fake-account1',
         accountNumber: '4711951501',
         amount: 1500,
         bankCode: '90090042',

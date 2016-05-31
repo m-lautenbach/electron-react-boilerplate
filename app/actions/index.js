@@ -8,6 +8,9 @@ import {
   setUserData
 } from './user';
 import {
+  selectAccount
+} from './select';
+import {
   login,
   logout
 } from './async';
@@ -18,6 +21,7 @@ export {
   startSession,
   endSession,
   setUserData,
+  selectAccount,
   login,
   logout
 };

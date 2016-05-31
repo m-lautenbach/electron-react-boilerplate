@@ -7,7 +7,7 @@ import * as Actions from '../actions/index';
 
 function mapStateToProps(state) {
   return {
-    transactions: state.account['fake-account'].transactions
+    transactions: state.account[state.select.accountId].transactions
   };
 }
 
