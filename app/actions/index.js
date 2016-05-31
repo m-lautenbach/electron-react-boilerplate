@@ -14,6 +14,9 @@ import {
   login,
   logout
 } from './async';
+import {
+  requestAccessToken
+} from './auth';
 
 export {
   setAccounts,
@@ -23,5 +26,6 @@ export {
   setUserData,
   selectAccount,
   login,
-  logout
+  logout,
+  requestAccessToken
 };
