@@ -9,13 +9,7 @@ function* fetchAccessToken(action) {
     try {
         var client_id, client_secret, username, password;
         ({client_id, client_secret, username, password} = action.payload);
-        const token = yield call(
-            figoApi.aquireAccessToken,
-            client_id,
-            client_secret,
-            username,
-            password
-        );
+        const token = yield figoApi.aquireAccessToken(client_id, client_secret, username, password);
         yield put({type: 'ACCESS_TOKEN_FETCH_SUCCEEDED', token: token});
     } catch (ex) {
         yield put({type: 'ACCESS_TOKEN_FETCH_FAILED', message: ex.message});
