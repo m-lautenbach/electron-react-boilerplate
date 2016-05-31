@@ -6,7 +6,7 @@ import {
 } from '../../app/figo/figo-client';
 
 
-describe.only('reducers: client', () => {
+describe('reducers: client', () => {
   var state;
 
   before(() => {
