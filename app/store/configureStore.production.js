@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import { hashHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
@@ -11,7 +10,7 @@ const sagaMiddleware = createSagaMiddleware()
 
 const router = routerMiddleware(hashHistory);
 
-const enhancer = applyMiddleware(thunk, router, sagaMiddleware);
+const enhancer = applyMiddleware(router, sagaMiddleware);
 
 export default function configureStore(initialState) {
     const store = createStore(rootReducer, initialState, enhancer);

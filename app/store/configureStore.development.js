@@ -1,10 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools';
-import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { hashHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
-import merge from 'lodash/fp/merge';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from '../reducers';
@@ -21,7 +19,7 @@ const logger = createLogger({
 const router = routerMiddleware(hashHistory);
 
 const enhancer = compose(
-  applyMiddleware(thunk, router, logger, sagaMiddleware),
+  applyMiddleware(router, logger, sagaMiddleware),
   DevTools.instrument(),
   persistState(
     window.location.href.match(
