@@ -40,7 +40,7 @@ process.on('uncaughtException', function(err) {
   console.error('Caught exception: ' + err.stack);
 });
 
-describe.only("figo access", function() {
+describe("figo access", function() {
   it("should get access_code", function(done) {
     var connection = new figo.Connection(client_id, client_secret);
     var device_name = "";
