@@ -8,8 +8,11 @@ import routes from './routes';
 import configureStore from './store/configureStore';
 import './app.global.css';
 
+import requestAccessToken from './actions/auth'
+
 const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
+store.dispatch(requestAccessToken());
 
 render(
   <Provider store={store}>
