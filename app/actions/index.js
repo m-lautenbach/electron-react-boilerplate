@@ -7,11 +7,17 @@ import {
   endSession,
   setUserData
 } from './user';
+import {
+  login,
+  logout
+} from './async';
 
 export {
   setAccounts,
   setTransactions,
   startSession,
   endSession,
-  setUserData
+  setUserData,
+  login,
+  logout
 };
