@@ -100,6 +100,7 @@
     "electron-debug": "^0.6.0",
     "figo": "^1.4.0",
     "font-awesome": "^4.6.1",
+    "lodash": "^4.13.1",
     "postcss": "^5.0.19",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
@@ -107,6 +108,7 @@
     "react-router": "^2.2.4",
     "react-router-redux": "^4.0.2",
     "redux": "^3.4.0",
+    "redux-saga": "^0.10.4",
     "redux-thunk": "^2.0.1",
     "source-map-support": "^0.4.0"
   },
