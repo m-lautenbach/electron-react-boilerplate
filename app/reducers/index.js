@@ -4,7 +4,9 @@ import counter from './counter';
 
 const rootReducer = combineReducers({
   counter,
-  routing
+  routing,
+  client: (state = {}) => {return state;},
+  user: (state = {}) => {return state;}
 });
 
 export default rootReducer;
