@@ -74,6 +74,7 @@
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
+    "expect.js": "^0.3.1",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "fbjs-scripts": "^0.6.0",
@@ -97,6 +98,7 @@
   "dependencies": {
     "css-modules-require-hook": "^4.0.0",
     "electron-debug": "^0.6.0",
+    "figo": "^1.4.0",
     "font-awesome": "^4.6.1",
     "postcss": "^5.0.19",
     "react": "^15.0.1",
