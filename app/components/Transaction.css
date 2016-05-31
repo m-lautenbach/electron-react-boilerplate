@@ -1,0 +1,21 @@
+.transaction {
+  padding: 1em;
+  background: #fff;
+  color: #666;
+  border-radius: 3px;
+  margin: 1em 0;
+  width: 400px;
+  font: 12px/1.5 Helvetica, Arial, sans-serif;
+}
+
+.transaction dl {
+  margin: 0;
+  overflow: auto;
+}
+
+.transaction dt { clear: left; float: left; }
+.transaction dd { float: left; }
+
+.amount {
+  font-size: 2em;
+}
