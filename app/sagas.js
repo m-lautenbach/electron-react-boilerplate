@@ -1,5 +1,5 @@
 import 'regenerator-runtime/runtime';
-import { takeEvery } from 'redux-saga';
+import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 
 import figoApi from './api/figo';
@@ -17,7 +17,7 @@ function* fetchAccessToken(action) {
 };
 
 function* figoSaga() {
-    yield* takeEvery("ACCESS_TOKEN_FETCH_REQUESTED", fetchAccessToken);
+    yield* takeLatest("ACCESS_TOKEN_FETCH_REQUESTED", fetchAccessToken);
 };
 
 export default {
